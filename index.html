@@ -1,0 +1,167 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Omar's sixth project on devchallenge.io">
+  <meta name="keywords" content="html, css, flex, bem, responsive, form, material icons">
+  <meta name="author" content="Omar Insurriaga">
+  <title>Checkout page</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!--Google material icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="page">
+    <!--Header section with title and description-->
+    <header class="header">
+      <h1 class="header__title">Checkout</h1>
+    </header>
+    <!--When the form is "submitted" successfully, it will show a successful submission page -->
+    <form action="#" class="order-form">
+      <!--part of the form with the customer info-->
+      <div class="order-form__customer-info">
+        <section class="contact-info">
+          <h2 class="contact-info__heading">
+            Contact information
+          </h2>
+          <!--email input-->
+          <label for="email" class="contact-info__sub-heading">E-mail</label>
+          <!-- <input type="email" class="contact-info__text" placeholder="Enter your email...">
+          <i class="material-icons contact-info__icon" id="email-icon">email</i> -->
+          <section class="contact-info__section">
+            <i class="material-icons contact-info__icon" id="email-icon">email</i>
+            <input type="email" class="contact-info__text" id="email" placeholder="Enter your email..." required>
+          </section> 
+          <p class="error-text">Please enter a valid email</p>
+          
+          <!--phone input-->
+          <label for="phone" class="contact-info__sub-heading">phone</label>
+          <section class="contact-info__section">
+            <i class="material-icons contact-info__icon" id="phone-icon">phone</i>
+            <input type="phone" class="contact-info__text" id="phone" placeholder="Enter your phone..." required>
+          </section>
+          <p class="error-text">Please enter a phone number</p>
+        </section>
+        <section class="shipping-info">
+          <h2 class="shipping-info__heading">
+            Shipping Address
+          </h2>
+          <!--name input-->
+          <label for="name" class="shipping-info__sub-heading">Full name</label>
+          <section class="shipping-info__section">
+            <i class="material-icons shipping-info__icon" id="name-icon">account_circle</i>
+            <input type="text" class="shipping-info__text" id="name" placeholder="Your name..." required>
+          </section>
+          <p class="error-text">Please enter a name</p>
+          
+          <!--address input-->
+          <label for="address" class="shipping-info__sub-heading">Address</label>
+          <section class="shipping-info__section">
+            <i class="material-icons shipping-info__icon" id="address-icon">home</i>
+            <input type="text" class="shipping-info__text address" id="address" placeholder="Your address.." required>
+          </section> 
+          <p class="error-text">Please enter an address</p>
+        </section>
+
+          <!--address input-->
+          <label for="City" class="shipping-info__sub-heading">City</label>
+          <section class="shipping-info__section">
+            <i class="material-icons shipping-info__icon" id="city-icon">location_city</i>
+            <input type="text" class="shipping-info__text address" id="city" placeholder="Your city.." required>
+          </section> 
+          <p class="error-text">Please enter a city</p>
+        </section>
+        <section class="country-info">
+          <!--country input-->
+          <div class="country-info__container">
+            <label for="country" class="country-info__sub-heading">Country</label>
+            <section class="country-info__section">
+              <i class="material-icons country-info__icon" id="country-icon">public</i>
+              <div class="countries-button"></div>
+              <select id="countries" required>
+                <option value="" hidden>Your country..</option>
+                <option value="USA">USA</option>
+                <option value="Mexico">Mexico</option>
+                <option value="Canada">Canada</option>
+              </select>
+            </section>
+            <p class="error-text">Please enter a country</p>
+          </div>
+          
+          <!--postal code input-->
+          <div class="country-info__container">
+            <label for="postal code" class="country-info__sub-heading">Postal code</label>
+            <section class="country-info__section">
+              <i class="material-icons country-info__icon" id="postal-icon">markunread_mailbox</i>
+              <input type="text" class="country-info__text" id="postal-code" placeholder="Your postal code.." required>
+            </section>
+            <p class="error-text">Please enter a postal code</p>
+          </div>
+        </section>
+        <section class="save-info">
+          <input type="checkbox" class="save-info__checkbox">
+          <p class="country-info__save-text">Save this information for next time</p>
+        </section>
+        <button type="button" class="order-form__button">Countinue</button>
+      </div>
+      <!--part of the form that has the shopping cart-->
+      <div class="order-form__shopping-cart">
+        <section class="items">
+          <!--first item-->
+          <div class="items__item">
+            <img src="./photo1.png" alt="bag" class="items__item-pic">
+            <section class="items__item-details">
+              <h2 class="items__item-name">Vintage Backbag</h2>
+              <h2 class="items__item-price">$54.99 <span> $94.99</span></h2>
+              <!--container to increase the number of items with icons working as buttons and a number that will
+              increase, but never go below 0. This will be controlled by JavaScript-->
+              <section class="items__item-count">
+                <i class="material-icons" id="minus-icon1">remove</i>
+                <h2 class="items__item-number">1</h2>
+                <i class="material-icons" id="plus-icon1">add</i>
+              </section>
+            </section>
+          </div>
+            <!--second item-->
+            <div class="items__item">
+              <img src="./photo2.png" alt="bag" class="items__item-pic">
+              <section class="items__item-details">
+                <h2 class="items__item-name">Levi Shoes</h2>
+                <h2 class="items__item-price">$74.99 <span> $124.99</span></h2>
+                <!--icons for increasing and decreasing the number of items ordered
+                  *note: these will not work in this project as they requires logic-->
+                <section class="items__item-count">
+                  <i class="material-icons" id="minus-icon2">remove</i>
+                  <h2 class="items__item-number">1</h2>
+                  <i class="material-icons" id="plus-icon2">add</i>
+                </section>
+              </section>
+            </div>
+          </section>
+        <!--container with shipping and total values-->
+        <section class="order-form__shipping">
+          <h2 class="order-form__shipping-heading">Shipping</h2>
+          <h2 class="order-form__shipping-price">$19</h2>
+        </section>
+        <section class="order-form__total">
+          <h2 class="order-form__total-heading">Total</h2>
+          <h2 class="order-form__total-price">$148.98</h2>
+        </section>
+      </div>
+    </form>
+    <footer class="footer">
+      created by <span>oinsur</span> - devChallenges.io
+    </footer>
+  </div>
+  <!--Pop up-->
+  <div class="modal" id="modal">
+    <i class="material-icons" id="close">close</i>
+    <h2>Thank you for your submission</h2>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
